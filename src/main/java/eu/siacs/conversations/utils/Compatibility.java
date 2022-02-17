@@ -59,6 +59,8 @@ public class Compatibility {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.P;
     }
 
+    public static boolean runsTwentyNine() { return Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q; }
+
     private static boolean getBooleanPreference(Context context, String name, @BoolRes int res) {
         return getPreferences(context).getBoolean(name, context.getResources().getBoolean(res));
     }
@@ -121,6 +123,16 @@ public class Compatibility {
                         if (category != null) {
                             category.removePreference(preference);
                         }
+                    }
+                }
+            }
+        }
+        if (!Compatibility.runsTwentyNine()) {
+            Preference preference = settingsFragment.findPreference("show_suggested_replies");
+            if (preference != null) {
+                for (PreferenceCategory category : categories) {
+                    if (category != null) {
+                        category.removePreference(preference);
                     }
                 }
             }

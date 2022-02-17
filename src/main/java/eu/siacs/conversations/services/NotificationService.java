@@ -259,6 +259,10 @@ public class NotificationService {
         return mXmppConnectionService.getBooleanPreference("notifications_from_strangers", R.bool.notifications_from_strangers);
     }
 
+    public boolean showSuggestedReplies() {
+        return mXmppConnectionService.getBooleanPreference("show_suggested_replies", R.bool.show_suggested_replies);
+    }
+
     private boolean isQuietHours() {
         if (!mXmppConnectionService.getBooleanPreference("enable_quiet_hours", R.bool.enable_quiet_hours)) {
             return false;
@@ -808,6 +812,7 @@ public class NotificationService {
                         createReplyIntent(conversation, lastMessageUuid, false))
                         .setSemanticAction(NotificationCompat.Action.SEMANTIC_ACTION_REPLY)
                         .setShowsUserInterface(false)
+                        .setAllowGeneratedReplies(showSuggestedReplies())
                         .addRemoteInput(remoteInput).build();
                 final NotificationCompat.Action wearReplyAction = new NotificationCompat.Action.Builder(R.drawable.ic_wear_reply,
                         replyLabel,

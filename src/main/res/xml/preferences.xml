@@ -56,6 +56,11 @@
             android:summary="@string/pref_notifications_from_strangers_summary"
             android:title="@string/pref_notifications_from_strangers" />
         <CheckBoxPreference
+            android:defaultValue="@bool/show_suggested_replies"
+            android:key="show_suggested_replies"
+            android:summary="@string/pref_show_suggested_replies_summary"
+            android:title="@string/pref_show_suggested_replies" />
+        <CheckBoxPreference
             android:defaultValue="@bool/headsup_notifications"
             android:key="notification_headsup"
             android:summary="@string/pref_headsup_notifications_summary"

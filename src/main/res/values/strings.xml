@@ -662,6 +662,8 @@
     <string name="contact_blocked_past_tense">Contact blocked.</string>
     <string name="pref_notifications_from_strangers">Notifications from strangers</string>
     <string name="pref_notifications_from_strangers_summary">Notify for messages and calls received from strangers.</string>
+    <string name="pref_show_suggested_replies">Show suggested replies</string>
+    <string name="pref_show_suggested_replies_summary">Allow Android to auto-suggest replies in the notification shade.</string>
     <string name="received_message_from_stranger">Received message from stranger</string>
     <string name="block_stranger">Block stranger</string>
     <string name="block_entire_domain">Block entire domain</string>
